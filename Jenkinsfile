@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/gautamdevgrovers/node-web-app.git'
+                // Cloning the repository
+                git branch: 'main',
+                    url: 'https://github.com/gautamdevgrovers/node-web-app.git'
             }
         }
         stage('Build') {
