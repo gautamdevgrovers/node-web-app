@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image on Jenkins host
-                    sh 'docker build -t mynodevalaapp:latest .'
+                    sh 'docker build -t node_web_image:latest .'
                 }
             }
         }
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Deploy the container on Jenkins host
-                    sh 'docker run -d -p 3000:3000 mynodevalaapp:latest'
+                    sh 'docker run --name node_web_app -d -p 3000:3000 node_web_image:latest'
                 }
             }
         }
