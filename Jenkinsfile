@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Deploy the container on Jenkins host
-                    sh 'docker run -d -p 3000:3000 mynodevalaapp:latest'
+                    sh 'docker run --name thenodewebapp -d -p 3000:3000 mynodevalaapp:latest'
                 }
             }
         }
